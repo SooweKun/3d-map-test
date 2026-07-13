@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d-map-test</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div>
+      <!-- <canvas id="c" class="tyty"></canvas> -->
+    </div>
+    <script type="module">
+      // import * as THREE from 'three';
+      // import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+      // function main() {
+      //   const canvas = document.querySelector('#c');
+      //   const width = window.innerWidth;
+      //   const height = window.innerHeight;
+      //   canvas.width = width;
+      //   canvas.height = height;
+
+      //   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas, pixelRatio: window.devicePixelRatio });
+
+      //   const fov = 120;
+      //   const aspect = 2;
+      //   const near = 0.1;
+      //   const far = 1500;
+      //   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+
+      //   camera.position.z = 5;
+
+      //   const controls = new OrbitControls(camera, renderer.domElement);
+
+      //   const scene = new THREE.Scene();
+
+      //   const planeGeometry = new THREE.PlaneGeometry(100, 100);
+      //   const planeMaterial = new THREE.MeshBasicMaterial({
+      //     color: 0x808080,
+      //     side: THREE.DoubleSide,
+      //     wireframe: false,
+      //   });
+      //   const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+      //   plane.rotation.x = -Math.PI / 2;
+      //   plane.position.y = -2.6;
+      //   scene.add(plane);
+
+      //   const boxWidth = 5;
+      //   const boxHeight = 5;
+      //   const boxDepth = 5;
+      //   const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+      //   const material = new THREE.MeshBasicMaterial({ color: 0xde9b38 });
+      //   const cube = new THREE.Mesh(geometry, material);
+      //   scene.add(cube);
+
+      //   function animate() {
+      //     requestAnimationFrame(animate);
+      //     controls.update();
+      //     renderer.render(scene, camera);
+      //   }
+      //   animate();
+      // }
+
+      // main();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
