@@ -6,7 +6,6 @@ export type Objects = {
 export function parseOSMXmlString(xmlContent: string): Objects[] {
   const nodes = new Map<string, [number, number]>();
 
-  // Извлекаем все ноды <node ... />
   const nodeRegex = /<node\s+([^>]+)>/g;
   let match;
 
@@ -21,7 +20,6 @@ export function parseOSMXmlString(xmlContent: string): Objects[] {
     }
   }
 
-  // Извлекаем блоки <way>...</way>
   const objects: Objects[] = [];
   const wayRegex = /<way\s+([^>]+)>([\s\S]*?)<\/way>/g;
 
@@ -31,8 +29,7 @@ export function parseOSMXmlString(xmlContent: string): Objects[] {
 
     const idMatch = attrs.match(/id="(\d+)"/);
 
-    // Интересуют только здания
-    if (idMatch && body.includes('k="building"')) {
+    if (idMatch && body.includes('k="highway"')) {
       const angle: [number, number][] = [];
       const ndRegex = /<nd\s+ref="(\d+)"/g;
       let ndMatch;
