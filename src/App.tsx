@@ -1,8 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
+import { BuildingsView } from './buildings-view';
 import { Controls } from './controll';
-import { MergedBuildings } from './MergedBuildings';
-import { Road } from './road';
 
 export type ProcessedBuilding = {
   id: string;
@@ -30,7 +29,7 @@ function App() {
 
         const data: Resault = await response.json();
         // const keys = Object.keys(data);
-
+        // const chunkBuildings = Object.values(data['1_1']);
         const chunkBuildings = Object.values(data).flat();
         setBuildings(chunkBuildings);
 
@@ -69,8 +68,7 @@ function App() {
           <planeGeometry args={[50000, 50000]} />
           <meshStandardMaterial color={0xde9b38} />
         </mesh>
-        <MergedBuildings buildings={buildings} />
-        <Road />
+        <BuildingsView buildings={buildings} />
       </Canvas>
     </div>
   );
